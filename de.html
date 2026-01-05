@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belajar TailwindCSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="text-center py-10 bg-white shadow">
+    <h1 class="text-3xl md:text-4xl font-bold">Mari Belajar TailwindCSS</h1>
+    <p class="text-gray-600 mt-2 text-sm md:text-base">Contoh layout yang sudah dibuat lebih nyaman dan responsif.</p>
+  </header>
+
+  <!-- Section contoh teks -->
+  <section class="max-w-3xl mx-auto p-4 space-y-4">
+    <h2 class="text-2xl font-semibold">Pemakaian Typography</h2>
+    <p class="leading-relaxed">TailwindCSS memudahkan pengaturan typografi, spacing, dan warna tanpa harus membuat CSS manual.</p>
+  </section>
+
+  <!-- Section gambar besar -->
+  <section class="max-w-5xl mx-auto p-4 mt-6 grid md:grid-cols-2 gap-6 items-center">
+    <img src="https://picsum.photos/500/350" class="w-full rounded-xl shadow" />
+    <div class="space-y-3">
+      <h2 class="text-2xl font-bold">Layout dengan Gambar</h2>
+      <p class="leading-relaxed">Bagian ini dibuat responsif menggunakan grid. Di layar kecil gambar berada di atas, di layar besar gambar berada di samping teks.</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="max-w-5xl mx-auto p-4 mt-10">
+    <h2 class="text-2xl font-bold mb-4">Gallery Responsive</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="https://picsum.photos/300/200?1" class="w-full rounded-lg shadow" />
+      <img src="https://picsum.photos/300/200?2" class="w-full rounded-lg shadow" />
+      <img src="https://picsum.photos/300/200?3" class="w-full rounded-lg shadow" />
+      <img src="https://picsum.photos/300/200?4" class="w-full rounded-lg shadow" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 mt-12 bg-white shadow-inner text-sm text-gray-600">
+    Dibuat agar nyaman dilihat di HP, Tablet, dan Desktop.
+  </footer>
+</body>
+</html>
