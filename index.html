@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Belajar Tailwind — Responsive</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (quick dev) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          spacing: {
+            13: '3.25rem',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* small helper for toggle animation */
+    #toggle:checked + label .toggle-circle {
+      transform: translateX(1rem);
+    }
+    label .toggle-circle {
+      transition: transform .2s ease;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-poppins">
+
+  <!-- HEADER / HERO -->
+  <header class="pt-8 pb-12">
+    <div class="container mx-auto px-6 lg:px-8">
+      <h1 class="text-center font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight">
+        <span class="bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">Mari Belajar</span>
+        <span class="block">TailwindCSS — Responsive Hero</span>
+      </h1>
+    </div>
+  </header>
+
+  <!-- HERO (layout option 3: prominent hero with big image) -->
+  <section class="bg-gradient-to-r from-blue-50 via-white to-yellow-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+    <div class="container mx-auto px-6 lg:px-8 py-12">
+      <div class="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
+        <!-- TEXT -->
+        <div class="w-full lg:w-1/2 text-center lg:text-left">
+          <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">By Ravael Rompas — 1 December 2025</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
+            Belajar Mengenai Typography pada Tailwind CSS
+          </h2>
+          <p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum excepturi, consequatur blanditiis molestiae consequuntur reprehenderit.
+            Pelajari cara membuat layout responsif, typography, dan dark mode dengan Tailwind.
+          </p>
+
+          <div class="flex flex-col sm:flex-row sm:justify-start justify-center gap-3">
+            <a href="#galeri" class="inline-block px-6 py-3 bg-sky-600 text-white rounded-full font-semibold shadow hover:bg-sky-700 transition">
+              Lihat Galeri
+            </a>
+            <a href="#subscribe" class="inline-block px-6 py-3 border border-sky-600 text-sky-600 rounded-full font-semibold hover:bg-sky-50 dark:hover:bg-slate-700 transition">
+              Subscribe saya
+            </a>
+          </div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="w-full lg:w-1/2">
+          <div class="relative mx-auto max-w-lg">
+            <img
+              src="https://i.pinimg.com/1200x/7b/79/b9/7b79b952848d0f6a068db6a4c2a93f51.jpg"
+              alt="Hero image"
+              class="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-xl"
+            />
+            <!-- subtle avatar/decoration -->
+            <div class="absolute -bottom-8 left-6 w-24 h-24 bg-white/40 backdrop-blur-md rounded-full border-4 border-white dark:border-slate-800 flex items-center justify-center">
+              <div class="w-14 h-14 bg-white/60 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACING demo -->
+  <section class="container mx-auto px-6 py-8">
+    <div class="mb-6">
+      <h3 class="text-xl font-bold mb-2">Spacing</h3>
+      <div class="m-4 p-4 bg-slate-100 dark:bg-slate-800 rounded">Contoh Margin & Padding</div>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-bold mb-2">Sizing</h3>
+      <div class="w-32 h-32 bg-sky-200 rounded flex items-center justify-center">Kotak 1</div>
+    </div>
+  </section>
+
+  <!-- LONG TEXT / SCROLLABLE BOX (fixed height, responsive) -->
+  <section class="container mx-auto px-6 py-6">
+    <div class="max-w-3xl mx-auto bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-auto h-80 p-6"
+         style="background-image: url('https://i.pinimg.com/736x/22/d3/be/22d3be362f1734d2f778c903d98046f0.jpg'); background-size: cover; background-position: center;">
+      <p class="text-base leading-relaxed bg-white/70 dark:bg-slate-900/60 p-4 rounded">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis assumenda explicabo itaque error officia ipsa id quidem adipisci...
+        <!-- truncated for brevity, keep your full text here -->
+      </p>
+    </div>
+  </section>
+
+  <!-- SOME CARDS -->
+  <section class="container mx-auto px-6 py-8">
+    <div class="max-w-lg mx-auto rounded-xl p-6 bg-white dark:bg-slate-800 shadow-md">
+      <h4 class="text-lg font-bold text-center mb-3">My Card</h4>
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea minima in eum non itaque...
+      </p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="container mx-auto px-6 py-8" id="subscribe">
+    <div class="max-w-lg mx-auto bg-white dark:bg-slate-800 rounded-xl p-6 shadow">
+      <form>
+        <label class="block mb-3">
+          <span class="font-semibold text-slate-700 dark:text-slate-200">Email <span class="text-pink-500">*</span></span>
+          <input type="email" placeholder="masukan email.." required
+                 class="mt-2 block w-full rounded-md border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+        </label>
+        <button type="submit" class="inline-block px-5 py-3 bg-sky-600 text-white rounded-md font-semibold hover:bg-sky-700">
+          Kirim
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- DARK MODE TOGGLE -->
+  <section class="container mx-auto px-6 py-6">
+    <div class="flex items-center justify-center gap-3">
+      <span class="text-sm text-slate-600 dark:text-slate-300">Light</span>
+      <input type="checkbox" id="toggle" class="sr-only" />
+      <label for="toggle" class="cursor-pointer">
+        <div class="w-12 h-6 bg-slate-400 rounded-full relative p-1 flex items-center">
+          <div class="w-4 h-4 bg-white rounded-full shadow toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-600 dark:text-slate-300">Dark</span>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="container mx-auto px-6 py-8" id="galeri">
+    <h2 class="text-center text-3xl font-bold mb-8">My Galeri</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- card repeated -->
+      <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+       <article class="rounded-md overflow-hidden shadow-lg bg-white border-spacing-1">
+        <img src="https://picsum.photos/600/400?1" alt="Foto 1" class="w-full h-44 object-cover">
+        <div class="px-4 py-3">
+          <h3 class="font-bold text-lg dark:text-slate-700">Judul gambar</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-700">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="mt-64 p-4 font-Poppins grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
+
+
+    <div class="col-span-2 md:col-span-4">
+        <h2 class="text-2xl font-semibold text-slate-700 dark:text-slate-50">Selamat datang</h2>
+        <p class="text-lg font-bold text-slate-600 dark:text-slate-100">@ravaelrompas</p>
+    </div>
+
+   
+    <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?9" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?8" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?7" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?6" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?5" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?4" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?3" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?2" class="w-full h-full object-cover">
+    </div>
+
+      <div class="bg-blue-500 aspect-[4/3] rounded-xl overflow-hidden hover:scale-[1.03] transition-all shadow-md">
+        <img src="https://picsum.photos/400/500?1" class="w-full h-full object-cover">
+    </div>
+
+
+
+</div>
+
+  </section>
+
+
+
+  <!-- Jump to top fixed button -->
+  <a href="#" class="fixed bottom-6 right-6 w-12 h-12 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-sky-700 transition">🔝</a>
+
+  <!-- SCRIPT: Dark mode toggle and small accessibility fixes -->
+  <script>
+    (function () {
+      const checkbox = document.getElementById('toggle');
+      const html = document.documentElement;
+
+      // initialize from previous preference (if any)
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        checkbox.checked = true;
+      }
+
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
